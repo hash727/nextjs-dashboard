@@ -96,7 +96,7 @@ export async function updateInvoice(
     //if form validation fails return error early
     if(!validatedFields.success){
         return {
-            error: validatedFields.error.flatten().fieldErrors,
+            errors: validatedFields.error.flatten().fieldErrors,
             message: "Missing Fields, Faild to update invoice.!"
         }
     }
@@ -112,8 +112,8 @@ export async function updateInvoice(
         `;
     }catch(error){
         return {
-            mesage: 'Database error: Faild to update Invoice'
-        }
+            message: 'Database error: Faild to update Invoice'
+        };
     }
     
 
